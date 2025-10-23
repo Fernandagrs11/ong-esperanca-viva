@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Cadastro — ONG Esperança Viva</title>
+  <meta name="description" content="Formulário de cadastro para voluntários e apoiadores.">
+  <!-- link rel="stylesheet" href="css/estilo.css" -->
+</head>
+<body>
+  <header role="banner">
+    <div class="container header-inner">
+      <h1>Cadastro de Voluntário / Doador</h1>
+      <nav role="navigation" aria-label="Menu principal">
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="cadastro.html">Cadastro</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" role="main" class="container">
+    <form id="form-cadastro" action="#" method="post" autocomplete="on" novalidate>
+      <!-- Dados Pessoais -->
+      <fieldset>
+        <legend>Dados Pessoais</legend>
+
+        <label for="nome">Nome Completo</label>
+        <input type="text" id="nome" name="nome" required minlength="3" placeholder="Seu nome completo" aria-required="true">
+
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" required placeholder="seu@exemplo.com">
+
+        <label for="cpf">CPF</label>
+        <input
+          type="text"
+          id="cpf"
+          name="cpf"
+          inputmode="numeric"
+          placeholder="000.000.000-00"
+          required
+          minlength="14"
+          maxlength="14"
+          pattern="\d{3}\.\d{3}\.\d{3}-\d{2}"
+          aria-describedby="cpf-help"
+          data-mask="cpf">
+        <small id="cpf-help">Formato esperado: 000.000.000-00</small>
+
+        <label for="telefone">Telefone</label>
+        <input
+          type="tel"
+          id="telefone"
+          name="telefone"
+          inputmode="tel"
+          placeholder="(11) 99999-9999"
+          required
+          minlength="14"
+          maxlength="15"
+          pattern="\(\d{2}\)\s?\d{4,5}-\d{4}"
+          data-mask="phone">
+
+        <label for="nascimento">Data de Nascimento</label>
+        <input type="date" id="nascimento" name="nascimento" required max="2007-12-31">
+      </fieldset>
+
+      <!-- Endereço -->
+      <fieldset>
+        <legend>Endereço</legend>
+
+        <label for="endereco">Endereço</label>
+        <input type="text" id="endereco" name="endereco" required placeholder="Rua, número, complemento">
+
+        <label for="cep">CEP</label>
+        <input
+          type="text"
+          id="cep"
+          name="cep"
+          inputmode="numeric"
+          placeholder="00000-000"
+          required
+          minlength="9"
+          maxlength="9"
+          pattern="\d{5}-\d{3}"
+          data-mask="cep">
+
+        <label for="cidade">Cidade</label>
+        <input type="text" id="cidade" name="cidade" required>
+
+        <label for="estado">Estado</label>
+        <select id="estado" name="estado" required>
+          <option value="">Selecione</option>
+          <option value="AC">AC</option><option value="AL">AL</option><option value="AP">AP</option>
+          <option value="AM">AM</option><option value="BA">BA</option><option value="CE">CE</option>
+          <option value="DF">DF</option><option value="ES">ES</option><option value="GO">GO</option>
+          <option value="MA">MA</option><option value="MG">MG</option><option value="MS">MS</option>
+          <option value="MT">MT</option><option value="PA">PA</option><option value="PB">PB</option>
+          <option value="PE">PE</option><option value="PI">PI</option><option value="PR">PR</option>
+          <option value="RJ">RJ</option><option value="RN">RN</option><option value="RO">RO</option>
+          <option value="RR">RR</option><option value="RS">RS</option><option value="SC">SC</option>
+          <option value="SE">SE</option><option value="SP">SP</option><option value="TO">TO</option>
+        </select>
+      </fieldset>
+
+      <!-- Preferências -->
+      <fieldset>
+        <legend>Preferências</legend>
+
+        <label for="interesse">Área de interesse</label>
+        <select id="interesse" name="interesse" required>
+          <option value="">Selecione</option>
+          <option value="alimentacao">Alimentação</option>
+          <option value="educacao">Educação</option>
+          <option value="saude">Saúde</option>
+          <option value="administracao">Administração</option>
+        </select>
+
+        <p>Possui disponibilidade nos finais de semana?</p>
+        <label for="fim-sim"><input type="radio" id="fim-sim" name="fim_semana" value="sim" required> Sim</label>
+        <label for="fim-nao"><input type="radio" id="fim-nao" name="fim_semana" value="nao"> Não</label>
+      </fieldset>
+
+      <button type="submit">Enviar Cadastro</button>
+      <p id="aviso-validacao" aria-live="polite" class="visually-hidden"></p>
+    </form>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="container">
+      <p>&copy; 2025 ONG Esperança Viva</p>
+    </div>
+  </footer>
+
+ 
+</body>
+</html>
